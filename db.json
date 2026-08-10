@@ -2,10 +2,10 @@
   "apartments": [
     {
       "id": "apt_1786395419844",
-      "complex": "cc",
-      "number": "cc",
+      "complex": "Каскадас 6",
+      "number": "Номер",
       "type": "1+1",
-      "image": "",
+      "image": "https://i.ibb.co/N2JtWR4R/photo-2026-06-30-19-33-11.jpg",
       "prices": [
         {
           "period": "Посуточно (за ночь)",
@@ -16,7 +16,7 @@
           "price": "0"
         }
       ],
-      "updatedAt": "2026-08-10T20:56:59.844Z"
+      "updatedAt": "2026-08-10T22:12:22.902Z"
     }
   ],
   "bookings": [
