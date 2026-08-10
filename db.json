@@ -37,21 +37,5 @@
       "updatedAt": "2026-08-10T22:27:32.013Z"
     }
   ],
-  "bookings": [
-    {
-      "id": "book_1786395959391",
-      "aptId": "apt_1786395419844",
-      "manager": "Стася",
-      "guest": "ddd",
-      "phone": "ddd",
-      "deposit": 45,
-      "remainingPrice": 45,
-      "totalPrice": 90,
-      "price": 45,
-      "periodType": "За день",
-      "commission": "ddd",
-      "startDate": "2026-08-20",
-      "endDate": "2026-08-23"
-    }
-  ]
+  "bookings": []
 }
