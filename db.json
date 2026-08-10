@@ -33,7 +33,8 @@
       "periodType": "За месяц",
       "commission": "rtrt",
       "startDate": "2026-08-04",
-      "endDate": "2026-08-14"
+      "endDate": "2026-08-14",
+      "comment": "Раний заезд"
     },
     {
       "id": "book_1786395959391",
