@@ -17,6 +17,24 @@
         }
       ],
       "updatedAt": "2026-08-10T22:12:22.902Z"
+    },
+    {
+      "id": "apt_1786400852013",
+      "complex": "Каскадас 2.1",
+      "number": "А19",
+      "type": "1+1",
+      "image": "https://i.ibb.co/Xx6HsRBM/photo-2026-08-10-23-25-47.jpg",
+      "prices": [
+        {
+          "period": "Посуточно (за ночь)",
+          "price": "0"
+        },
+        {
+          "period": "За месяц",
+          "price": "0"
+        }
+      ],
+      "updatedAt": "2026-08-10T22:27:32.013Z"
     }
   ],
   "bookings": [
