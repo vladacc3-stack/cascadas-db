@@ -786,6 +786,12 @@
             box-shadow: 0 0 0 3px var(--primary-light);
         }
 
+        .form-group input[readonly] {
+            background-color: #f1f5f9;
+            color: var(--text);
+            cursor: not-allowed;
+        }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1222,8 +1228,16 @@
                         <span class="booking-view-value" id="viewPhone">-</span>
                     </div>
                     <div class="booking-view-row">
-                        <span class="booking-view-label">Стоимость</span>
-                        <span class="booking-view-value" id="viewPrice">-</span>
+                        <span class="booking-view-label">Залог</span>
+                        <span class="booking-view-value" id="viewDeposit">-</span>
+                    </div>
+                    <div class="booking-view-row">
+                        <span class="booking-view-label">Остаток суммы</span>
+                        <span class="booking-view-value" id="viewRemainingPrice">-</span>
+                    </div>
+                    <div class="booking-view-row">
+                        <span class="booking-view-label">Общая стоимость</span>
+                        <span class="booking-view-value" id="viewTotalPrice" style="color: var(--primary); font-size: 15px;">-</span>
                     </div>
                     <div class="booking-view-row" id="viewCommissionRow" style="display: none;">
                         <span class="booking-view-label">Комиссия</span>
@@ -1270,8 +1284,19 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Цена (€)</label>
-                        <input type="number" id="bookingPrice" required placeholder="150">
+                        <label>Залог (€)</label>
+                        <input type="number" id="bookingDeposit" placeholder="50" oninput="calculateTotalPrice()">
+                    </div>
+                    <div class="form-group">
+                        <label>Остаток суммы (€)</label>
+                        <input type="number" id="bookingRemainingPrice" required placeholder="100" oninput="calculateTotalPrice()">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Общая стоимость (€)</label>
+                        <input type="number" id="bookingTotalPrice" readonly placeholder="150" style="font-weight: 700; color: var(--primary);">
                     </div>
                     <div class="form-group">
                         <label>Период расчета</label>
@@ -1316,7 +1341,7 @@
 <script>
     const GITHUB_CONFIG = {
         owner: 'vladacc3-stack',
-        repo: 'cascadas-db',
+        repo: 'apartments-db',
         path: 'db.json'
     };
 
@@ -1362,6 +1387,12 @@
         const hours24 = 24 * 60 * 60 * 1000;
         
         return (currentTime - updatedTime) < hours24;
+    }
+
+    function calculateTotalPrice() {
+        const deposit = parseFloat(document.getElementById('bookingDeposit').value) || 0;
+        const remainingPrice = parseFloat(document.getElementById('bookingRemainingPrice').value) || 0;
+        document.getElementById('bookingTotalPrice').value = deposit + remainingPrice;
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -2008,6 +2039,7 @@
         document.getElementById('bookingActionsEdit').style.display = 'flex';
         
         document.getElementById('bookingDateError').style.display = 'none';
+        calculateTotalPrice();
         
         document.getElementById('bookingModal').classList.add('active');
     }
@@ -2019,12 +2051,19 @@
         currentSelectedBookingId = bookingId;
         const apt = db.apartments.find(a => a.id === booking.aptId);
 
+        const depositVal = parseFloat(booking.deposit) || 0;
+        const remainingVal = parseFloat(booking.remainingPrice) || parseFloat(booking.price) || 0;
+        const totalVal = parseFloat(booking.totalPrice) || (depositVal + remainingVal);
+        const periodTypeVal = booking.periodType || 'За день';
+
         document.getElementById('bookingModalTitle').innerText = 'Информация о бронировании';
         document.getElementById('viewManager').innerText = booking.manager || '-';
         document.getElementById('viewAptName').innerText = apt ? `${apt.complex}, ${apt.number}` : 'Апартамент удален';
         document.getElementById('viewGuest').innerText = booking.guest || '-';
         document.getElementById('viewPhone').innerText = booking.phone || '-';
-        document.getElementById('viewPrice').innerText = `${booking.price || 0} € (${booking.periodType || 'За день'})`;
+        document.getElementById('viewDeposit').innerText = `${depositVal} €`;
+        document.getElementById('viewRemainingPrice').innerText = `${remainingVal} € (${periodTypeVal})`;
+        document.getElementById('viewTotalPrice').innerText = `${totalVal} €`;
         
         const commRow = document.getElementById('viewCommissionRow');
         if (booking.commission && booking.commission.trim() !== '') {
@@ -2042,8 +2081,10 @@
         document.getElementById('bookingManager').value = booking.manager || '';
         document.getElementById('bookingGuest').value = booking.guest;
         document.getElementById('bookingPhone').value = booking.phone || '';
-        document.getElementById('bookingPrice').value = booking.price || '';
-        document.getElementById('bookingPeriodType').value = booking.periodType || 'За день';
+        document.getElementById('bookingDeposit').value = booking.deposit !== undefined ? booking.deposit : '';
+        document.getElementById('bookingRemainingPrice').value = booking.remainingPrice !== undefined ? booking.remainingPrice : (booking.price || '');
+        document.getElementById('bookingTotalPrice').value = totalVal;
+        document.getElementById('bookingPeriodType').value = periodTypeVal;
         document.getElementById('bookingCommission').value = booking.commission || '';
         document.getElementById('bookingStart').value = booking.startDate;
         document.getElementById('bookingEnd').value = booking.endDate;
@@ -2114,6 +2155,7 @@
         document.getElementById('bookingEditForm').style.display = 'block';
         document.getElementById('bookingActionsEdit').style.display = 'flex';
         document.getElementById('bookingDateError').style.display = 'none';
+        calculateTotalPrice();
     }
 
     function switchToViewBooking() {
@@ -2136,13 +2178,20 @@
         const endDate = document.getElementById('bookingEnd').value;
         const id = document.getElementById('bookingId').value;
 
+        const depositVal = parseFloat(document.getElementById('bookingDeposit').value) || 0;
+        const remainingVal = parseFloat(document.getElementById('bookingRemainingPrice').value) || 0;
+        const totalVal = depositVal + remainingVal;
+
         const bookingData = {
             id: id ? id : 'book_' + Date.now(),
             aptId: aptId,
             manager: document.getElementById('bookingManager').value,
             guest: document.getElementById('bookingGuest').value,
             phone: document.getElementById('bookingPhone').value,
-            price: document.getElementById('bookingPrice').value,
+            deposit: depositVal,
+            remainingPrice: remainingVal,
+            totalPrice: totalVal,
+            price: remainingVal,
             periodType: document.getElementById('bookingPeriodType').value,
             commission: document.getElementById('bookingCommission').value.trim(),
             startDate: startDate,
