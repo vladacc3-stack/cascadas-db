@@ -1,4 +1,23 @@
 {
-  "apartments": [],
+  "apartments": [
+    {
+      "id": "apt_1786395419844",
+      "complex": "cc",
+      "number": "cc",
+      "type": "1+1",
+      "image": "",
+      "prices": [
+        {
+          "period": "Посуточно (за ночь)",
+          "price": "0"
+        },
+        {
+          "period": "За месяц",
+          "price": "0"
+        }
+      ],
+      "updatedAt": "2026-08-10T20:56:59.844Z"
+    }
+  ],
   "bookings": []
 }
