@@ -39,22 +39,6 @@
   ],
   "bookings": [
     {
-      "id": "book_1786395929093",
-      "aptId": "apt_1786395419844",
-      "manager": "Наталия",
-      "guest": "gdf",
-      "phone": "dgf",
-      "deposit": 56,
-      "remainingPrice": 55,
-      "totalPrice": 111,
-      "price": 55,
-      "periodType": "За месяц",
-      "commission": "rtrt",
-      "startDate": "2026-08-04",
-      "endDate": "2026-08-14",
-      "comment": "Раний заезд"
-    },
-    {
       "id": "book_1786395959391",
       "aptId": "apt_1786395419844",
       "manager": "Стася",
