@@ -377,5 +377,22 @@
       "updatedAt": "2026-08-11T07:49:58.577Z"
     }
   ],
-  "bookings": []
+  "bookings": [
+    {
+      "id": "book_1786436720945",
+      "aptId": "apt_1786395419844",
+      "manager": "Наталия",
+      "guest": "Гаяне",
+      "phone": "0",
+      "deposit": 0,
+      "remainingPrice": 0,
+      "totalPrice": 0,
+      "price": 0,
+      "periodType": "За день",
+      "commission": "",
+      "startDate": "2026-08-12",
+      "endDate": "2026-08-19",
+      "comment": ""
+    }
+  ]
 }
