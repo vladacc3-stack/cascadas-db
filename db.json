@@ -392,21 +392,29 @@
     },
     {
       "id": "apt_1786450436853",
-      "complex": "Качкадас 2, 3 этаж",
+      "complex": "Каскадас 2, 3 этаж",
       "number": "Номер ",
       "type": "1+1",
       "image": "https://i.ibb.co/BVD8jjSk/IMG-5584.jpg",
       "prices": [
         {
           "period": "Посуточно (за ночь)",
-          "price": "0"
+          "price": "75"
         },
         {
           "period": "За месяц",
-          "price": "0"
+          "price": "700"
+        },
+        {
+          "period": "Год",
+          "price": "6500"
+        },
+        {
+          "period": "Финальная уборка",
+          "price": "45"
         }
       ],
-      "updatedAt": "2026-08-11T12:13:56.853Z"
+      "updatedAt": "2026-08-11T12:18:30.245Z"
     }
   ],
   "bookings": [
