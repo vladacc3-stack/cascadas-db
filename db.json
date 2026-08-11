@@ -497,6 +497,24 @@
         }
       ],
       "updatedAt": "2026-08-11T14:19:17.971Z"
+    },
+    {
+      "id": "apt_1786458071755",
+      "complex": "Каскадас 3, 1 этаж",
+      "number": "А5",
+      "type": "Студия",
+      "image": "https://i.ibb.co/qMFszRjD/IMG-5586.jpg",
+      "prices": [
+        {
+          "period": "Посуточно (за ночь)",
+          "price": "0"
+        },
+        {
+          "period": "За месяц",
+          "price": "0"
+        }
+      ],
+      "updatedAt": "2026-08-11T14:21:11.754Z"
     }
   ],
   "bookings": [
