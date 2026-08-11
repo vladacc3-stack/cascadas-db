@@ -255,6 +255,24 @@
         }
       ],
       "updatedAt": "2026-08-11T06:45:58.668Z"
+    },
+    {
+      "id": "apt_1786431227454",
+      "complex": "Каскадас 2.1, 4 этаж",
+      "number": "A39",
+      "type": "1+1",
+      "image": "https://i.ibb.co/hR0TCdSn/photo-2026-08-10-22-19-18.jpg",
+      "prices": [
+        {
+          "period": "Посуточно (за ночь)",
+          "price": "0"
+        },
+        {
+          "period": "За месяц",
+          "price": "0"
+        }
+      ],
+      "updatedAt": "2026-08-11T06:53:47.453Z"
     }
   ],
   "bookings": []
