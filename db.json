@@ -273,6 +273,20 @@
         }
       ],
       "updatedAt": "2026-08-11T06:53:47.453Z"
+    },
+    {
+      "id": "apt_1786431376623",
+      "complex": "Марвел Делюкс",
+      "number": "26",
+      "type": "Студия",
+      "image": "https://i.ibb.co/QFfSHbqr/photo-2026-08-11-09-15-15.jpg",
+      "prices": [
+        {
+          "period": "Посуточно (за ночь)",
+          "price": "0"
+        }
+      ],
+      "updatedAt": "2026-08-11T06:56:16.623Z"
     }
   ],
   "bookings": []
