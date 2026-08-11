@@ -2,21 +2,25 @@
   "apartments": [
     {
       "id": "apt_1786395419844",
-      "complex": "Каскадас 6",
-      "number": "Номер",
+      "complex": "Каскадас 6, 2 этаж",
+      "number": "НомерА9",
       "type": "1+1",
       "image": "https://i.ibb.co/N2JtWR4R/photo-2026-06-30-19-33-11.jpg",
       "prices": [
         {
           "period": "Посуточно (за ночь)",
-          "price": "0"
+          "price": "75"
         },
         {
-          "period": "За месяц",
-          "price": "0"
+          "period": "За месяц сентябрь",
+          "price": "600"
+        },
+        {
+          "period": "Финальная Уборка",
+          "price": "45"
         }
       ],
-      "updatedAt": "2026-08-10T22:12:22.902Z"
+      "updatedAt": "2026-08-11T06:24:13.316Z"
     },
     {
       "id": "apt_1786400852013",
