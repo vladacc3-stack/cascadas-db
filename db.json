@@ -833,6 +833,22 @@
       "startDate": "2026-09-01",
       "endDate": "2026-09-10",
       "comment": ""
+    },
+    {
+      "id": "book_1787735980332",
+      "aptId": "apt_1786400852013",
+      "manager": "Наталия",
+      "guest": "хозяйка",
+      "phone": "0",
+      "deposit": 0,
+      "remainingPrice": 0,
+      "totalPrice": 0,
+      "price": 0,
+      "periodType": "За день",
+      "commission": "",
+      "startDate": "2026-08-26",
+      "endDate": "2026-09-05",
+      "comment": ""
     }
   ]
 }
