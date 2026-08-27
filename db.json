@@ -881,6 +881,22 @@
       "startDate": "2026-08-27",
       "endDate": "2026-09-26",
       "comment": ""
+    },
+    {
+      "id": "book_1787823087496",
+      "aptId": "apt_1786429629409",
+      "manager": "Стася",
+      "guest": "Андрей",
+      "phone": "+380674027061",
+      "deposit": 50,
+      "remainingPrice": 600,
+      "totalPrice": 650,
+      "price": 600,
+      "periodType": "За месяц",
+      "commission": "",
+      "startDate": "2026-09-10",
+      "endDate": "2027-03-10",
+      "comment": ""
     }
   ]
 }
